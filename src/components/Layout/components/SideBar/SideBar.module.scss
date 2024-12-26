@@ -1,0 +1,122 @@
+@import "../../../../Scss/mixin";
+
+.sidebar {
+  width: 200px;
+  padding: 12px;
+  position: sticky;
+  top: 70px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  margin-left: 32px;
+  height: calc(100vh - 80px);
+  border-radius: var(--border-radius);
+  background-color: var(--sub-background);
+  user-select: none;
+  z-index: 999;
+  box-shadow: var(--box-shadow);
+  @include scroll-y();
+
+  @media (max-width: 1024px) {
+    margin-left: 24px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+    position: fixed;
+    top: 60px;
+    margin: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    overscroll-behavior: none;
+    border-radius: unset;
+    background-color: var(--background);
+    padding: 16px;
+  }
+
+  &__row {
+    @include flex-custom(null, null, column);
+
+    > h4 {
+      @include flex-custom(center);
+      font-size: 2rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      gap: 8px;
+    }
+
+    .sidebar__list {
+      margin: 0 -6px;
+
+      .sidebar__item {
+        display: block;
+        color: var(--white-color);
+        padding: 6px;
+        transition: 0.3s;
+        font-size: 1.8rem;
+        position: relative;
+        cursor: pointer;
+
+        ::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 3px;
+          border-radius: var(--border-radius);
+
+          @media (max-width: 768px) {
+            left: -3px;
+            right: unset;
+          }
+        }
+
+        &:hover {
+          color: var(--primary-color);
+        }
+
+        span > i {
+          margin-left: 8px;
+        }
+
+        a {
+          display: block;
+          color: inherit;
+
+          i {
+            margin-right: 8px;
+          }
+        }
+
+        .sidebar__sub_list {
+          @include scroll-y();
+          height: 200px;
+          margin-left: 6px;
+          padding: 6px;
+
+          @media (max-width: 768px) {
+            @include flex-custom(null, null, null, wrap);
+          }
+
+          li {
+            font-size: 1.6rem;
+            position: relative;
+
+            @media (max-width: 768px) {
+              width: 50%;
+            }
+          }
+        }
+      }
+
+      .sidebar__item.active {
+        color: var(--primary-color);
+        font-weight: 600;
+
+        ::after {
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}

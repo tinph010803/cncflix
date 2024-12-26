@@ -1,0 +1,11 @@
+@import "../../Scss/mixin";
+
+.Search {
+  @include flex-custom(null, null, column, null, 12px);
+
+  button {
+    color: #000;
+    padding: 8px 12px;
+    margin: 12px auto;
+  }
+}

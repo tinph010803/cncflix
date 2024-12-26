@@ -1,0 +1,134 @@
+@import "../../../../Scss/mixin";
+
+.movie {
+  width: 16.66667%;
+  padding: 0 8px;
+  transition: 0.3s;
+  transition-delay: 0.1s;
+
+  &:hover {
+    transform: translateY(-10px);
+
+    @media (max-width: 768px) {
+      transform: unset;
+    }
+  }
+
+  &:hover img {
+    opacity: 0.3;
+    transform: scale(1.1);
+  }
+
+  &:hover i {
+    opacity: 1;
+    color: var(--primary-color);
+  }
+
+  &:hover .movie__info {
+    top: 4px;
+    opacity: 1;
+  }
+
+  &:hover .movie__name {
+    color: var(--primary-color);
+  }
+
+  @media (max-width: 1024px) {
+    width: 25%;
+  }
+
+  @media (max-width: 768px) {
+    width: 28vw;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 576px) {
+    width: 40vw;
+    flex-shrink: 0;
+  }
+
+  figure {
+    border-radius: var(--border-radius);
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid var(--sub-background);
+
+    @media (max-width: 1024px) {
+      height: 280px;
+    }
+
+    @media (max-width: 768px) {
+      height: 240px;
+    }
+
+    i {
+      font-size: 5rem;
+      color: var(--white-color);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .movie__info {
+      position: absolute;
+      top: -40px;
+      right: 4px;
+      gap: 4px;
+      max-width: 90%;
+      opacity: 0;
+      transition: 0.3s;
+      @include flex-custom(null, null, column);
+
+      @media (max-width: 768px) {
+        top: 4px;
+        opacity: 1;
+      }
+
+      .quality,
+      .status,
+      .episode_current {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        color: var(--white-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        user-select: none;
+        font-size: 1.4rem;
+        @media (max-width: 768px) {
+            font-size: 1.2rem;
+            padding: 4px;
+        }
+      }
+
+      .quality {
+        background-color: var(--blue-custom-color);
+      }
+
+      .status {
+        background-color: var(--primary-color);
+      }
+
+      .episode_current {
+        background-color: var(--pink-custom-color);
+
+        @media (max-width: 768px) {
+            display: none;
+          }  
+      }
+    }
+  }
+
+  &__name {
+    margin-top: 8px;
+    color: var(--white-color);
+    font-size: 1.6rem;
+    transition: 0.3s;
+    @include ellipsis-text(2);
+  }
+}

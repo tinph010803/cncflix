@@ -1,0 +1,30 @@
+.detail {
+  &__pages {
+    display: flex;
+    overflow-x: auto;
+    padding: 6px 6px 12px 6px;
+    gap: 12px;
+
+    li {
+      user-select: none;
+      padding: 6px 16px;
+      border-radius: var(--border-radius);
+      background-color: var(--primary-color);
+      font-size: 1.8rem;
+      color: var(--black-color);
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:active {
+        outline: 3px solid var(--primary-color);
+        outline-offset: 3px;
+      }
+    }
+    li.active {
+      background-color: var(--blue-custom-color);
+      outline: 3px solid var(--blue-custom-color);
+      outline-offset: 3px;
+    }
+  }
+}

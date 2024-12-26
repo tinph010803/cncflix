@@ -1,0 +1,138 @@
+@import "../../../../Scss/mixin";
+
+.navbar {
+  @include flex-custom(center, space-between);
+  position: sticky;
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 32px;
+  border-bottom: 0.1px solid var(--seperate-color);
+  z-index: 9999;
+  background-color: var(--background);
+
+  @media (max-width: 1024px) {
+    padding: 0 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+
+  &__logo {
+    @include flex-custom(center);
+    gap: 0 12px;
+
+    a {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+    }
+
+    h4 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+  }
+
+  &__search {
+    @include flex-custom(center, space-between);
+
+    .navbar__search_left {
+      display: none;
+      font-size: 2.6rem;
+      padding: 0 6px;
+      margin-left: -6px;
+      cursor: pointer;
+    }
+
+    .navbar__search_center {
+      position: relative;
+      width: 400px;
+
+      @media (max-width: 768px) {
+        width: calc(100% - 50px);
+        display: none;
+      }
+
+      input {
+        width: 100%;
+        height: 40px;
+        border-radius: var(--border-radius);
+        padding: 0 72px 0 12px;
+        background-color: var(--sub-background);
+        color: var(--white-color);
+        font-size: 1.8rem;
+        box-shadow: var(--box-shadow);
+        margin-left: auto;
+
+        &:focus {
+          @include outline-default(var(--sub-background));
+        }
+      }
+
+      input:focus + span {
+        opacity: 1;
+      }
+
+      a,
+      span {
+        @include absolute-center("top");
+        color: #fff;
+        transition: 0.3s;
+        padding: 0 4px;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--primary-color);
+        }
+      }
+
+      a {
+        font-size: 2.4rem;
+        right: 2%;
+
+        @media (max-width: 768px) {
+          right: 1%;
+        }
+      }
+
+      span {
+        font-size: 2rem;
+        opacity: 0;
+        right: 40px;
+
+        @media (max-width: 768px) {
+          right: 40px;
+        }
+      }
+    }
+
+    .navbar__search_right {
+      display: none;
+      cursor: pointer;
+      font-size: 2.6rem;
+      padding: 0 6px;
+
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  &__bar {
+    display: none;
+    cursor: pointer;
+    padding: 0 6px;
+    margin-left: -6px;
+    font-size: 2.6rem;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

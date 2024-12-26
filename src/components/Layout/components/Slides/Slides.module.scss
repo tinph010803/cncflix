@@ -1,0 +1,11 @@
+.slides__container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 32px;
+
+    .slides__inner {
+        display: flex;
+        transition: all .8s ease 0s;
+    }
+}
