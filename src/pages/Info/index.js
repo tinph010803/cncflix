@@ -109,7 +109,10 @@ function Info() {
                         </div>
                         <h5>Thông tin phim</h5>
                         <span className='text-primary'>
-                            Thời gian: <span className='text-white'>{movie?.time}</span>
+                            Thời lượng: <span className='text-white'>{movie?.time}</span>
+                        </span>
+                        <span className='text-primary'>
+                            Năm phát hành: <span className='text-white'>{movie?.year}</span>
                         </span>
                         <span className='text-primary'>
                             Đạo diễn: <span className='text-white'>{movie?.director}</span>
