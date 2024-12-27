@@ -7,7 +7,7 @@ function Movie({ data }) {
             <Link to={`/info/${data?.slug}`}>
                 <figure>
                     <img
-                        src={data?.poster_url.includes('https://img.phimapi.com') ?
+                        src={data?.poster_url.includes('https://phimimg.com/') ?
                             data?.poster_url :
                             `https://img.phimapi.com/${data?.poster_url}`
                         }

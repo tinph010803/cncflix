@@ -6,16 +6,16 @@ import { showInfoMessage } from '../toastMessage'
 function Footer() {
     const [valueSubmid, setValueSubmit] = useState('')
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (valueSubmid === '') {
-            showInfoMessage('Chưa nhập lời nhắn!')
-            return
-        }
-        const subject = encodeURIComponent('Xin chào tôi đến từ CNCFLIX!')
-        const body = encodeURIComponent(valueSubmid)
-        window.location.href = `mailto:qviet092@gmail.com?subject=${subject}&body=${body}`
-    }
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //     if (valueSubmid === '') {
+    //         showInfoMessage('Chưa nhập lời nhắn!')
+    //         return
+    //     }
+    //     const subject = encodeURIComponent('Xin chào tôi đến từ CNCFLIX!')
+    //     const body = encodeURIComponent(valueSubmid)
+    //     window.location.href = `mailto:qviet092@gmail.com?subject=${subject}&body=${body}`
+    // }
 
     return (
         <footer>
@@ -67,7 +67,7 @@ function Footer() {
                         Nếu quyền lợi của bạn bị vi phạm, hãy liên hệ với chúng tôi. Chúng tôi sẽ xử lý và xóa các nội dung liên quan đó kịp thời. Xin cảm ơn!
                     </p>
                 </div>
-                <div className={styles.footer__column}>
+                {/* <div className={styles.footer__column}>
                     <h3>Gửi phản hồi</h3>
                     <form className={styles.footer__form}>
                         <label>
@@ -87,7 +87,7 @@ function Footer() {
                             Gửi
                         </button>
                     </form>
-                </div>
+                </div> */}
             </div>
             <div className={styles.footer__row}>
                 <p className={styles.footer__copyright}>© 2024 - CNCFLIX. Web xem phim chất lượng.</p>
