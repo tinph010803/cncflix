@@ -5,7 +5,6 @@ import SideBar from "../components/SideBar"
 import Footer from "../components/Footer"
 import Provider from "../../../Provider"
 import Loading from "../components/Loading"
-import { showInfoMessage } from "../components/toastMessage"
 
 function DefaultLayout({ children }) {
     const [isLoading, setIsLoading] = useState(true)
@@ -15,8 +14,7 @@ function DefaultLayout({ children }) {
         setTimeout(() => {
             setIsLoading(false)
         }, 2000)
-        showInfoMessage(
-            'Chào mừng bạn đến với CNCFLIX! Lựa chọn bộ phim yêu thích và thưởng thức ngay thôi nào ^_^', 2000)
+        
     }, [])
 
     useEffect(() => {

@@ -1,12 +1,8 @@
-import { useEffect } from "react"
 import Movies from '../../components/Layout/components/Movies'
 import Slides from '../../components/Layout/components/Slides'
 
 function Home() {
-    useEffect(() => {
-        document.title = 'Chào mừng bạn đến với CNCFLIX! Chúc bạn có trải nghiệm xem phim vui vẻ nhất.'
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, [])
+   
 
     return (
         <>
